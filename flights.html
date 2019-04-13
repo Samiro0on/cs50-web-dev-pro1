@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Flights
+{% endblock %}
+
+{% block body %}
+    <h1>All Flights</h1>
+
+    <ul>
+        {% for flight in flights %}
+            <li>
+                <a href="{{ url_for('flight', flight_id=flight.id) }}" method="post">
+                    {{ flight.origin }} to {{ flight.destination }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div>
+			<input name="origin" list="countries" placeholder="Start:...">
+			<datalist id="countries">
+				<option value="Egypt">
+				<option value="Angola">
+				<option value="Tunis">
+				<option value="Togo">
+				<option value="Kenia">
+				<option value="Moroccow">
+				<option value="Mali">
+				<option value="South Africa">
+				<option value="England">
+				<option value="Ethupia">
+				<option value="America">
+				<option value="Tanzania">
+				<option value="Kongo">
+				<option value="Marc">
+				<option value="Greece">
+				<option value="Spain">
+				<option value="Italy">
+				<option value="Romania">
+				<option value="India">
+				<option value="Russia">
+				<option value="France">
+				<option value="Paris">
+				<option value="New York">
+				<option value="Istanbul">
+				<option value="Lima">
+                <option value="London">
+			</datalist>
+
+        <input name="destination" list="countries" placeholder="End:...">
+			<datalist id="countries">
+				<option value="Egypt">
+				<option value="Angola">
+				<option value="Tunis">
+				<option value="Togo">
+				<option value="Kenia">
+				<option value="Moroccow">
+				<option value="Mali">
+				<option value="South Africa">
+				<option value="England">
+				<option value="Ethupia">
+				<option value="America">
+				<option value="Tanzania">
+				<option value="Kongo">
+				<option value="Marc">
+				<option value="Greece">
+				<option value="Spain">
+				<option value="Italy">
+				<option value="Romania">
+				<option value="India">
+				<option value="Russia">
+				<option value="France">
+				<option value="Paris">
+				<option value="New York">
+				<option value="Istanbul">
+				<option value="Lima">
+                <option value="London">
+			</datalist>
+
+
+			<button>Next</button>
+
+		</div>
+    <a href="http://127.0.0.1:5000/">Back</a>
+
+{% endblock %}
